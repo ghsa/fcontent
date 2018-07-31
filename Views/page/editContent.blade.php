@@ -3,7 +3,10 @@
 <div class="row">
     <div class="col-lg-12">
 
-        <h1 class="page-header">Edit Content Page</h1>
+        <h2 class="page-header">Edit Content Page</h2>
+        <h4>{{$page->name}}</h4>
+        <hr>
+        
     @include('fcontent::errors._check')
 
         <div class="row">

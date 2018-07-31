@@ -69,10 +69,10 @@ class PageHandler {
         $arrayDefaultValues = [];
         $flag = 0;
         foreach($matches[1] as $match) {
-            $arrayDafaultValues[$match] = $matches[2][$flag];
+            $arrayDefaultValues[$match] = $matches[2][$flag];
             $flag++; 
         }
-        return $arrayDafaultValues;
+        return $arrayDefaultValues;
     }
 
 
