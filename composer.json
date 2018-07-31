@@ -1,0 +1,12 @@
+{
+    "name": "ghsa/fcontent",
+    "require": {
+        "laracasts/flash": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Gustavo Andrade",
+            "email": "ghsa16@gmail.com"
+        }
+    ]
+}
