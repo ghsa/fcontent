@@ -12,7 +12,7 @@ After create your web page, you can open FContent panel and generate fields of t
 Clone repository into you app
 
 ### Service Provider
-Copy de service provider im config/app.php 
+Copy de service provider in config/app.php 
 
 ```
 FContent\Providers\FContentServiceProvider::class

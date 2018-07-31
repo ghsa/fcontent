@@ -1,12 +1,30 @@
 {
     "name": "ghsa/fcontent",
+    "description": "A CMS to laravel developers",
     "require": {
-        "laracasts/flash": "^3.0"
+        "laracasts/flash": "^3.0",
+        "laravelcollective/html": "^5.6"
     },
+    "license": "mit",
     "authors": [
         {
-            "name": "Gustavo Andrade",
-            "email": "ghsa16@gmail.com"
+            "name": "Gustavo H. S. Andrade",
+            "email": "contato@gustavoandrade.net"
         }
-    ]
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "FContent\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FContent\\Providers\\FContentServiceProvider"
+            ]
+        }
+    }
+    
+    
 }
