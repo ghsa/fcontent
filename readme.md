@@ -50,6 +50,16 @@ Example:
 5. Fill fields
 
 
+### File Upload
+The default file driver used is driver "public", you can change it publishing config file
+
+
+### Publish config file
+```
+php artisan vendor:publish --provider "FContent\Provicers\FContentServiceProvider"
+```
+
+
 ### Render the page
 ````
 use FContent\FContent;

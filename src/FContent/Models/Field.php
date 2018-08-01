@@ -56,7 +56,7 @@ class Field extends Model
 
     public function uploadFile(UploadedFile $file)
     {
-        $upload = $file->store(self::FILE_PATH_BASE, env('FILE_DISK'));
+        $upload = $file->store(self::FILE_PATH_BASE, config('fcontent.file_driver'));
         return $upload;
     }
 
@@ -95,7 +95,16 @@ class Field extends Model
 
     public static function getFakeValue($type)
     {
-        return "fake value";
+        switch($type){
+            case self::TYPE_TEXT:
+                return "fake value";
+            case self::TYPE_HTML:
+                return "fake html value ....";
+            case self::TYPE_IMAGE:
+                return null;
+            case self::TYPE_FILE:
+                return null;
+        }
     }
 
 

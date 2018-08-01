@@ -15,13 +15,19 @@
             @foreach($page->fields as $field)
 
             <div class="col-sm-12 form-group field-group">
-                <label for="{{$field->name}}">{{$field->getProperName()}}</label> 
+                <label for="{{$field->name}}"><b>{{$field->getProperName()}}</b></label> 
                 @if($field->type == FContent\Models\Field::TYPE_TEXT)
                     <input type="text" name="{{$field->getFormName()}}" value="{{$field->value}}" class='form-control'> 
                 @elseif($field->type == FContent\Models\Field::TYPE_HTML)
                     <textarea class='form-control summernote' name='{{$field->getFormName()}}'>{{$field->value}}</textarea>
                 @elseif($field->type == FContent\Models\Field::TYPE_IMAGE || $field->type == FContent\Models\Field::TYPE_FILE)
                     <div class="row">
+                        @if($field->type == FContent\Models\Field::TYPE_IMAGE && !empty($field->value))
+                            <div class="col-sm-2">
+                                <img src="/{{$field->value}}" style='width: 100%' >
+                            </div>
+
+                        @endif
                         <div class="col-sm-2">
                             
                             <input type="file" name="{{$field->getFormName()}}" class='form-control' />

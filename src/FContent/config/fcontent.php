@@ -12,6 +12,8 @@ return [
     |
     */
 
-    'auth_middleware' => 'fcontent.auth'
+    'auth_middleware' => 'fcontent.auth',
+
+    'file_driver' => 'public'
     
 ];
