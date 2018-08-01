@@ -101,9 +101,9 @@ class Field extends Model
             case self::TYPE_HTML:
                 return "fake html value ....";
             case self::TYPE_IMAGE:
-                return null;
+                return '';
             case self::TYPE_FILE:
-                return null;
+                return '';
         }
     }
 
