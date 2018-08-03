@@ -13,8 +13,8 @@ class PageHandler {
     private $pageResource;
     private $page;
     //private $patternSearch = '/\$fcontent\[[\'\"]([a-zA-Z:_.0-9\s]*)[\'\"]\]/i'; // Restrict pattern
-    private $patternSearch = '/\$fcontent\[[\'\"](.+)[\'\"]\]/i';
-    private $patternDefault = '/@@(.+:.+)=[\"\'](.+)[\"\']/';
+    private $patternSearch = '/\$fcontent\[[\'\"](.+?)[\'\"]\]/i';
+    private $patternDefault = '/@@(.+:.+)=[\"\'](.+?)[\"\']/i';
     
 
     public function __construct(PageInterface $page)

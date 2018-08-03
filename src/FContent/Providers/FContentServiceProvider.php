@@ -16,7 +16,7 @@ class FContentServiceProvider extends ServiceProvider {
         
         $this->loadMigrationsFrom(__DIR__.'/../Migrations');
 
-        $this->mergeConfigFrom(__DIR__.'/../Config/fcontent.php', 'fcontent');
+        $this->mergeConfigFrom(__DIR__.'/../config/fcontent.php', 'fcontent');
 
         $this->publishes([
             __DIR__."/../Views" => resource_path("views/vendor/fcontent")
