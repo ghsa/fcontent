@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Blade;
 class FContent {
 
 
-    public static function pageRender(PageInterface $page, $vars = [])
+    public function render(PageInterface $page, $vars = [])
     {
-        $fcontent = self::getArrayFields($page);
+        $fcontent = $this->getArrayFields($page);
         $vars['fcontent'] = $fcontent;
         return view($page->getName(), $vars);
     }
   
-    public static function getArrayFields(PageInterface $page)
+    private function getArrayFields(PageInterface $page)
     {
         $fields = $page->getFields();
         $pagePath = $page->getAbsolutePath();

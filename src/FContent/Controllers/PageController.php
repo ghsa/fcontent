@@ -33,15 +33,9 @@ class PageController extends Controller
         $page = Page::find($request->get('page_id'));
 
         foreach($page->fields as $field){
-            if(!empty($request->get($field->getFormName())) || !empty($request->file($field->getFormName()))) {
-                if($field->type == Field::TYPE_TEXT || $field->type == Field::TYPE_HTML) {
-                    $field->value = $request->get($field->getFormName());
-                }elseif ($field->type == Field::TYPE_IMAGE || $field->type == Field::TYPE_FILE) {
-                    $file = $request->file($field->getFormName());
-                    $field->uploadAndSaveFile($file);
-                }
-                $field->save();
-            }
+            
+            $this->saveFieldFromRequest($request, $field);
+            
         }
 
         flash("Content successfully saved.")->success();
@@ -49,10 +43,25 @@ class PageController extends Controller
 
     }
 
-    public function index()
+    private function saveFieldFromRequest(Request $request, $field)
     {
-   
-    
+        if(empty($request->get($field->getFormName())) && empty($request->file($field->getFormName()))) {
+            return false;
+        }
+
+        if($field->type == Field::TYPE_TEXT || $field->type == Field::TYPE_HTML) {
+            $field->value = $request->get($field->getFormName());
+        }elseif ($field->type == Field::TYPE_IMAGE || $field->type == Field::TYPE_FILE) {
+            $file = $request->file($field->getFormName());
+            $field->uploadAndSaveFile($file);
+        }
+        $field->save();
+        
+    }
+
+
+    public function index()
+    {    
         $pages = Page::with('fields')->paginate(10);
 
         return view('fcontent::page.index', compact('pages'));

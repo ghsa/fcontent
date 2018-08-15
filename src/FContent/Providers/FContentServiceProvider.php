@@ -4,6 +4,7 @@ namespace FContent\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use FContent\FContent;
 
 class FContentServiceProvider extends ServiceProvider {
 
@@ -30,7 +31,9 @@ class FContentServiceProvider extends ServiceProvider {
 
     public function register()
     {
-
+        $this->app->singleton('FContent.fcontent', function($app) {
+            return new FContent();
+        });
     }
 
 }

@@ -59,10 +59,15 @@ The default file driver used is driver "public", you can change it publishing co
 php artisan vendor:publish --provider "FContent\Provicers\FContentServiceProvider"
 ```
 
+### Register FContent Facade
+```
+ 'FContent' => FContent\Facades\FContent::class
+```
 
-### Render the page
+
+### Render the page using Facade
 ````
-use FContent\FContent;
+use FContent\Facades\FContent;
 ````
 
 ```
@@ -70,7 +75,7 @@ $page = Page::find(1);
 
 $name = "Just an example var";
 
-return FContent::pageRender($page, compact('name'));
+return \FContent::render($page, compact('name'));
 ```
 
 
