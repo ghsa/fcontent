@@ -19,7 +19,7 @@
                 @if($field->type == FContent\Models\Field::TYPE_TEXT)
                     <input type="text" name="{{$field->getFormName()}}" value="{{$field->value}}" class='form-control'> 
                 @elseif($field->type == FContent\Models\Field::TYPE_HTML)
-                    <textarea class='form-control summernote' name='{{$field->getFormName()}}'>{{$field->value}}</textarea>
+                    <textarea class='form-control <?php echo config('fcontent.html_summernote') ? 'summernote' : '' ?>' name='{{$field->getFormName()}}'>{{$field->value}}</textarea>
                 @elseif($field->type == FContent\Models\Field::TYPE_IMAGE || $field->type == FContent\Models\Field::TYPE_FILE)
                     <div class="row">
                         @if($field->type == FContent\Models\Field::TYPE_IMAGE && !empty($field->value))

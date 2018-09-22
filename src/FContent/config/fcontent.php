@@ -14,6 +14,26 @@ return [
 
     'auth_middleware' => 'fcontent.auth',
 
-    'file_driver' => 'public'
+    /*
+    |--------------------------------------------------------------------------
+    | Drive used to do uploads
+    |--------------------------------------------------------------------------
+    |
+    | Driver used to do uploads in fcontent panel
+    |
+    */
+
+    'file_driver' => 'public',
+
+    /*
+    |--------------------------------------------------------------------------
+    | HTML editor
+    |--------------------------------------------------------------------------
+    |
+    | Enable html summer note editor in HTML fields on fcontent panel
+    |
+    */
+
+    'html_summernote' => false
     
 ];

@@ -12,7 +12,6 @@ class PageHandler {
 
     private $pageResource;
     private $page;
-    //private $patternSearch = '/\$fcontent\[[\'\"]([a-zA-Z:_.0-9\s]*)[\'\"]\]/i'; // Restrict pattern
     private $patternSearch = '/\$fcontent\[[\'\"](.+?)[\'\"]\]/i';
     private $patternDefault = '/@@(.+:.+)=[\"\'](.+?)[\"\']/i';
     
@@ -36,6 +35,13 @@ class PageHandler {
         $pagePath = base_path().'/resources/views/'.$pageName;
         return $pagePath;
     }
+
+
+    public function cleanPage()
+    {
+        \DB::table('fields')->delete();
+    }
+
 
     public function readPageFields()
     {

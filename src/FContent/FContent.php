@@ -16,6 +16,20 @@ class FContent {
         $vars['fcontent'] = $fcontent;
         return view($page->getName(), $vars);
     }
+
+    public function renderInDevelopment(PageInterface $page, $vars = [])
+    {
+        $pageHandler = new PageHandler($page);
+
+        $pageHandler->cleanPage();
+        
+        $pageHandler->readPageFields();
+
+        $fcontent = $this->getArrayFields($page);
+        $vars['fcontent'] = $fcontent;
+        return view($page->getName(), $vars);
+
+    }
   
     private function getArrayFields(PageInterface $page)
     {

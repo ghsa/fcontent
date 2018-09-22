@@ -54,8 +54,10 @@
                         {{$page->updated_at}}
                     </td>
                     <td>
-                        <a href={{route( 'fcontent.page.reload', [ 'id'=> $page->id])}} class='btn btn-primary btn-sm'><i class='fa fa-refresh'></i></button>
-                        <a href={{route('fcontent.page.editContent', ['id' => $page->id])}} class='btn btn-success btn-sm margin-left'><i class='fa fa-pencil'></i></button>
+                        
+                            <a title="Refresh content" href={{route( 'fcontent.page.reload', [ 'id'=> $page->id])}} class='btn btn-primary tip btn-sm'><i class='fa fa-refresh'></i></a>
+                            <a title="Edit content" href={{route('fcontent.page.editContent', ['id' => $page->id])}} class='btn btn-success tip btn-sm margin-left'><i class='fa fa-pencil'></i></a>
+                       
                     </td>
                 </tr>
 

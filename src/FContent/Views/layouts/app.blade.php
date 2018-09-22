@@ -79,10 +79,12 @@
 
     <script>
         $(document).ready(function() {
-                $('.summernote').summernote({
-                    height: 150
-                });
+            $('.summernote').summernote({
+                height: 150
             });
+
+            $('.tip').tooltip();
+        });
     </script>
 
 </body>
